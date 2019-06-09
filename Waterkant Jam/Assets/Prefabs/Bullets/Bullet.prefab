@@ -51,6 +51,7 @@ MonoBehaviour:
   lifeTime: 3
   destroyOnContact: 1
   damage: 1
+  destroyAfterLifeTime: 1
 --- !u!114 &3555537759487285725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,7 +102,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ccf619f7a29603b49b884317701546e0, type: 3}
-  m_Color: {r: 1, g: 0.514151, b: 0.82977796, a: 1}
+  m_Color: {r: 0.4575472, g: 0.9789757, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

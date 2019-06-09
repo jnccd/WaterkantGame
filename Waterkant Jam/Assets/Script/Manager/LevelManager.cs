@@ -73,16 +73,19 @@ public class LevelManager : MonoBehaviour
                 StartCoroutine(SpawnEnemyCorutine(() => SpawnEnemy(basicEnemyPrefab), 1.5f, 16));
                 StartCoroutine(SpawnEnemyCorutine(() => StartCoroutine(SpawnMetalGearEnemyGroup(4)), 4, 16));
                 StartCoroutine(SpawnEnemyCorutine(() => SpawnEnemy(trashEnemyPrefab), 6, 16));
+                StartCoroutine(SpawnPowUpCorutine(10, 16));
             }),
             new Phase(17, () => {
                 StartCoroutine(SpawnEnemyCorutine(() => SpawnEnemy(beamEnemyPrefab), 6, 17));
                 StartCoroutine(SpawnEnemyCorutine(() => StartCoroutine(SpawnMetalGearEnemyGroup(5)), 5, 17));
                 StartCoroutine(SpawnEnemyCorutine(() => SpawnEnemy(trashEnemyPrefab), 5, 17));
+                StartCoroutine(SpawnPowUpCorutine(10, 17));
             }),
             new Phase(25, () => {
                 StartCoroutine(SpawnEnemyCorutine(() => SpawnEnemy(beamEnemyPrefab), 3, 25));
                 StartCoroutine(SpawnEnemyCorutine(() => StartCoroutine(SpawnMetalGearEnemyGroup(5)), 4, 25));
                 StartCoroutine(SpawnEnemyCorutine(() => SpawnEnemy(trashEnemyPrefab), 4, 25));
+                StartCoroutine(SpawnPowUpCorutine(10, 25));
             }),
             new Phase(10, () => {
             }),
