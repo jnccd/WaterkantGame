@@ -15,6 +15,8 @@ public class BossScript : EnemyScript
 
     private void Start()
     {
+
+        SoundManager.instance.PlayerSound(SoundManager.instance.BossIntro);
         StartCoroutine(StartDelay());
         SoundManager.instance.PlayBossMusic();
     }
@@ -30,5 +32,14 @@ public class BossScript : EnemyScript
     {
         if(started)
              Instantiate(trash, spawnPos.position, Quaternion.identity);
+    }
+
+    public override void Hit(int damage)
+    {
+        if (health % 10 == 0)
+        {
+            SoundManager.instance.PlayerSound(SoundManager.instance.BossHit);
+        }
+        base.Hit(damage);
     }
 }

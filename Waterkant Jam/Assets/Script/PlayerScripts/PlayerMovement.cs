@@ -38,6 +38,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private GameObject radioEmp;
 
+    [SerializeField]
+    private GameObject trashPrefab;
+
     private PowerUpScript.PowerUpType currentPowerUp = PowerUpScript.PowerUpType.None;
 
     private bool cannonInUse = false;
@@ -100,6 +103,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     cannonInUse = false;
                     cannon.gameObject.SetActive(false);
+                    SpawnTrash();
                 }
             }
             else
@@ -126,16 +130,19 @@ public class PlayerMovement : MonoBehaviour
                 case PowerUpScript.PowerUpType.Shield:
                     SoundManager.instance.PlayerSound(SoundManager.instance.Construction);
                     ToogleShield(true);
+                    SpawnTrash();
                     break;
                 case PowerUpScript.PowerUpType.Explosion:
                     Instantiate(explosion, transform.position, Quaternion.identity);
                     CameraScript.camera.SetCameraShake(0.6f, 1.5f);
                     SoundManager.instance.PlayerSound(SoundManager.instance.Explosion1);
+                    SpawnTrash();
                     break;
                 case PowerUpScript.PowerUpType.Electro:
                     GameObject radioEffect = Instantiate(radioEmp, transform.position, Quaternion.identity);
                     Destroy(radioEffect, 1);
                     SoundManager.instance.PlayerSound(SoundManager.instance.Radio);
+                    SpawnTrash();
                     break;
             }
             currentPowerUp = PowerUpScript.PowerUpType.None;
@@ -151,6 +158,11 @@ public class PlayerMovement : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         }
+    }
+
+    private void SpawnTrash()
+    {
+        Instantiate(trashPrefab, transform.position + Vector3.right * 2.5f, Quaternion.identity);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

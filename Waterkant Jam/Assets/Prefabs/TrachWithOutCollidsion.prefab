@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6106408236359347142}
   - component: {fileID: 4098448757435958420}
   - component: {fileID: 1518731908617076073}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: TrachWithOutCollidsion
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b6773a97d4aa04ea1ad843a2d2855f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 9
+  bulletSpeed: 0
   lifeTime: 3
   destroyOnContact: 0
   damage: 1

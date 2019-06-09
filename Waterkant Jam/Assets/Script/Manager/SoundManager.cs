@@ -44,6 +44,11 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     public AudioClip Victory;
 
+    [SerializeField]
+    public AudioClip BossIntro;
+    [SerializeField]
+    public AudioClip BossHit;
+
 
     private void Awake()
     {
