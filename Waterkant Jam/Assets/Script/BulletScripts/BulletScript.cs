@@ -11,13 +11,19 @@ public class BulletScript : MonoBehaviour
     /// </summary>
     [SerializeField]
     private float lifeTime = 3;
-
+    [SerializeField]
+    private bool destroyOnContact;
+    [SerializeField]
     private int damage = 1;
+    [SerializeField]
+    private bool destroyAfterLifeTime = true;
 
-    private void Start()
+    protected virtual void Start()
     {
-        GetComponent<Rigidbody2D>().velocity = new Vector2(bulletSpeed, 0);
-        StartCoroutine(LifeTime());
+        if(bulletSpeed != 0)
+            GetComponent<Rigidbody2D>().velocity = new Vector2(bulletSpeed, 0);
+        if(destroyAfterLifeTime)
+            StartCoroutine(LifeTime());
     }
 
     /// <summary>
@@ -30,13 +36,17 @@ public class BulletScript : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            SoundManager.instance.PlayerSound(SoundManager.instance.Hit);
             collision.gameObject.GetComponent<EnemyScript>().Hit(damage);
             ParticleManager.SpawnSparks(transform.position);
-            Destroy(gameObject);
+            if (destroyOnContact)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

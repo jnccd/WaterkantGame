@@ -5,9 +5,9 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
     [SerializeField]
-    private int health = 5;
-    private float hitCooldown = 0.3f;
-    private float currentHitCooldown = float.MaxValue;
+    protected int health = 5;
+    protected float hitCooldown = 0.3f;
+    protected float currentHitCooldown = float.MaxValue;
 
     /// <summary>
     /// Method called when the enemy gets hit.
@@ -20,6 +20,12 @@ public class EnemyScript : MonoBehaviour
             if (health <= 0)
             {
                 Destroy(gameObject);
+                
+                /*var o = Instantiate(trash, transform.position, Quaternion.identity);
+                o.GetComponent<Rigidbody2D>().velocity = new Vector3(
+                    Random.Range(-maxInitialTrashVelocity, maxInitialTrashVelocity),
+                    Random.Range(-maxInitialTrashVelocity, maxInitialTrashVelocity),
+                    Random.Range(-maxInitialTrashVelocity, maxInitialTrashVelocity));*/
             }
             StartCoroutine(CountDownHitCooldown());
         }

@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - EnemyBullet
+  - PowerUp
   layers:
   - Default
   - TransparentFX
@@ -53,4 +55,7 @@ TagManager:
     locked: 0
   - name: Object
     uniqueID: 3804476733
+    locked: 0
+  - name: Trash
+    uniqueID: 824421613
     locked: 0

@@ -61,13 +61,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\BulletScripts\BulletScript.cs" />
+    <Compile Include="Assets\Script\BulletScripts\Shield.cs" />
     <Compile Include="Assets\Script\EnemyScripts\BasicEnemy.cs" />
+    <Compile Include="Assets\Script\EnemyScripts\BossScript.cs" />
     <Compile Include="Assets\Script\EnemyScripts\EnemyScript.cs" />
     <Compile Include="Assets\Script\EnemyScripts\MetalGear.cs" />
+    <Compile Include="Assets\Script\EnemyScripts\ShootingStar.cs" />
+    <Compile Include="Assets\Script\EnemyScripts\TrashEnemy.cs" />
+    <Compile Include="Assets\Script\Generell\CameraScript.cs" />
     <Compile Include="Assets\Script\Generell\ParalacEffect.cs" />
+    <Compile Include="Assets\Script\Manager\DestroyOnGameOver.cs" />
+    <Compile Include="Assets\Script\Manager\GameManager.cs" />
     <Compile Include="Assets\Script\Manager\LevelManager.cs" />
     <Compile Include="Assets\Script\Manager\ParticleManager.cs" />
+    <Compile Include="Assets\Script\Manager\PowerUpUIManager.cs" />
+    <Compile Include="Assets\Script\Manager\SoundManager.cs" />
+    <Compile Include="Assets\Script\PlayerScripts\EnemyDetection.cs" />
     <Compile Include="Assets\Script\PlayerScripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Script\PowerUps\PowerUpScript.cs" />
+    <Compile Include="Assets\Script\PowerUps\ShockCollider.cs" />
+    <Compile Include="Assets\Script\PowerUps\ShockScript.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Unity Projects/Waterkant Jam/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
